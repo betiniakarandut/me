@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./betini_site.db"
     cors_origins: list[str] = ["*"]
     github_username: str = "betiniakarandut"
+    github_token: str | None = None
     hashnode_blog_rss_url: str = "https://betiniakarandut.hashnode.dev/rss.xml"
 
     model_config = SettingsConfigDict(
