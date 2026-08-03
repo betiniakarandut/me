@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime
 from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree
@@ -5,6 +6,8 @@ from xml.etree import ElementTree
 import httpx
 
 from app.repositories.article_repository import ArticleRepository
+
+logger = logging.getLogger(__name__)
 
 
 class ArticleService:
@@ -15,12 +18,16 @@ class ArticleService:
         return self.repository.list_articles()
 
     def sync_from_hashnode_rss(self, rss_url: str) -> int:
-        with httpx.Client(timeout=20.0) as client:
-            response = client.get(rss_url)
-            response.raise_for_status()
-            xml_text = response.text
+        try:
+            with httpx.Client(timeout=20.0) as client:
+                response = client.get(rss_url)
+                response.raise_for_status()
+                xml_text = response.text
+            root = ElementTree.fromstring(xml_text)
+        except (httpx.HTTPStatusError, httpx.RequestError, ElementTree.ParseError) as exc:
+            logger.warning("Hashnode RSS sync failed: %s", exc)
+            return 0
 
-        root = ElementTree.fromstring(xml_text)
         items = root.findall(".//item")
         parsed_items: list[dict] = []
         for item in items[:10]:
