@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     github_token: str | None = None
     hashnode_blog_rss_url: str = "https://betiniakarandut.hashnode.dev/rss.xml"
 
+    resend_api_key: str | None = None
+    contact_notification_email: str | None = None
+    contact_from_email: str = "onboarding@resend.dev"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
