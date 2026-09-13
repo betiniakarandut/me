@@ -1,12 +1,6 @@
 import { get, post } from "./httpClient";
 
 export async function fetchPortfolioData() {
-  try {
-    await post("/articles/sync-hashnode");
-  } catch {
-    // Best effort sync; app should still render existing content.
-  }
-
   const keys = [
     "profile",
     "journey",

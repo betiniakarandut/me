@@ -593,6 +593,49 @@ def seed_initial_data(db: Session) -> None:
     db.add_all(
         [
             Article(
+                title="Offline-First Systems in Low-Connectivity Environments",
+                source="Hashnode",
+                url="https://betiniakarandut.hashnode.dev/offline-first-systems-low-connectivity",
+                excerpt=(
+                    "Engineering notes on designing for retries, synchronization, and eventual "
+                    "consistency when users operate in low-connectivity environments."
+                ),
+                published_at="2026-06-15",
+            ),
+            Article(
+                title="Production AI Isn't an ML Problem. It's a Systems Problem.",
+                source="Hashnode",
+                url="https://betiniakarandut.hashnode.dev/production-ai-isn-t-an-ml-problem-it-s-a-systems-problem",
+                excerpt=(
+                    "Most discussions about AI focus on models — which one is better, which "
+                    "benchmark is higher. After building an AI-powered diagnostic platform for "
+                    "solar equipment, the real lessons were about systems, not models."
+                ),
+                published_at="2026-06-02",
+            ),
+            Article(
+                title="Teaching the Revolution: Field Notes from ISSAM, Tractrac Plus, and the Future of Nigerian Agriculture",
+                source="Hashnode",
+                url="https://betiniakarandut.hashnode.dev/teaching-the-revolution-field-notes-from-issam-tractrac-plus-and-the-future-of-nigerian-agriculture",
+                excerpt=(
+                    "What happens when you stop building for users and start building with them — "
+                    "field notes from months spent training mechanization service providers in "
+                    "Nigeria."
+                ),
+                published_at="2026-05-21",
+            ),
+            Article(
+                title="When More Workers Made It Worse: Connection Pools, Shared Postgres, and Demo-Day",
+                source="Hashnode",
+                url="https://betiniakarandut.hashnode.dev/when-more-workers-made-it-worse-connection-pools-shared-postgres-and-demo-day",
+                excerpt=(
+                    "TracTrac's backends started failing intermittently during practical training "
+                    "camps — a debugging story about connection pools, shared Postgres, and a "
+                    "demo-day deadline."
+                ),
+                published_at="2026-05-11",
+            ),
+            Article(
                 title="I Deployed My First Cloud Server...",
                 source="Hashnode",
                 url="https://betiniakarandut.hashnode.dev/i-deployed-my-first-cloud-server-and-almost-left-it-wide-open-beginner-friendly-guide",
