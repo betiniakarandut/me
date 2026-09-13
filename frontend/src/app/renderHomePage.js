@@ -3,7 +3,7 @@ import { renderReadabilityToolbar } from "../components/readabilityToolbar";
 import {
   renderAboutSection,
   renderArticlesSection,
-  renderChallengesSection,
+  renderCommunityServiceSection,
   renderCtaSection,
   renderExperienceSection,
   renderGithubSection,
@@ -13,17 +13,17 @@ import {
   renderProjectsSection,
   renderScholarshipsSection,
   renderSiteFooter,
-  renderPersonalLifeSection,
   renderTopAlert,
 } from "../components/sections";
 import {
   renderArchitectureSection,
+  renderDataSystemsSection,
   renderHighlightsSection,
-  renderPerformanceCaseStudySection,
   renderPhilosophySection,
   renderProductionEngineeringSection,
   renderSkillsSection,
   renderStatsStrip,
+  renderTracTracCaseStudiesSection,
 } from "../components/engineeringSections";
 
 export function renderHomePage(container, state) {
@@ -51,20 +51,20 @@ export function renderHomePage(container, state) {
           ${renderHighlightsSection()}
           ${renderAboutSection(profile)}
           ${renderProjectsSection(projects)}
+          ${renderTracTracCaseStudiesSection()}
           ${renderArchitectureSection()}
           ${renderProductionEngineeringSection()}
-          ${renderPerformanceCaseStudySection()}
-          <section id="journey-experience" class="stacked-section">
-            ${renderJourneySection(journey)}
+          <section id="journey-experience">
             ${renderExperienceSection(experience)}
           </section>
-          ${renderPhilosophySection()}
-          ${renderSkillsSection(skills)}
-          ${renderChallengesSection()}
-          ${renderPersonalLifeSection()}
-          ${renderScholarshipsSection(scholarships)}
+          ${renderDataSystemsSection()}
           ${renderArticlesSection(articles)}
           ${renderGithubSection(githubRepos)}
+          ${renderPhilosophySection()}
+          ${renderSkillsSection(skills)}
+          ${renderJourneySection(journey)}
+          ${renderCommunityServiceSection()}
+          ${renderScholarshipsSection(scholarships)}
           ${renderCtaSection(profile)}
           <section id="contact">
             ${renderContactSection()}

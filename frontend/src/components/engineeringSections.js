@@ -23,7 +23,7 @@ export function renderHighlightsSection() {
     {
       tag: "OF",
       title: "Offline-First Systems",
-      body: "Proposed and led an offline-first system for low-connectivity field operations at TracTrac that fully replaced a paid third-party (CommCare) data-collection tool.",
+      body: "Led an offline-first system for low-connectivity field operations at TracTrac, replacing a paid third-party data-collection tool.",
     },
     {
       tag: "DS",
@@ -33,12 +33,12 @@ export function renderHighlightsSection() {
     {
       tag: "CD",
       title: "Cloud & DevOps",
-      body: "Provisioned a VPS from scratch in 4 days and run DevOps for 20+ containerized apps; cut infrastructure costs 60% via capacity modeling and right-sized scaling.",
+      body: "Migrated infrastructure to a self-managed Contabo VPS and Coolify, running 20+ containerized applications with capacity modelling and right-sizing.",
     },
     {
       tag: "$",
       title: "Payment Systems",
-      body: "Built Paystack payment reconciliation at TracTrac and an escrow-style payment lifecycle with payout wallets and dispute workflows at SolarAfRiC.",
+      body: "Implemented concurrency-safe financial reconciliation using precise decimal arithmetic, with Paystack payment processing at TracTrac.",
     },
     {
       tag: "AI",
@@ -48,7 +48,7 @@ export function renderHighlightsSection() {
     {
       tag: "PE",
       title: "Performance Engineering",
-      body: "Diagnosed a production dashboard generating 60+ backend requests per load and redesigned its data-loading architecture.",
+      body: "Diagnosed a production dashboard issue under load, driven by request fan-out, through measurement rather than assumptions.",
     },
   ];
 
@@ -75,10 +75,9 @@ export function renderHighlightsSection() {
 
 export function renderStatsStrip() {
   const stats = [
-    { value: "60K+", label: "Registered users managed (TracTrac)" },
+    { value: "60K+", label: "Registered users on TracTrac's platform" },
     { value: "5K+", label: "Farmers onboarded (VITAL 2)" },
-    { value: "60%", label: "Infrastructure cost cut at TracTrac" },
-    { value: "5", label: "Production platforms across 4 companies" },
+    { value: "20+", label: "Containerized production applications managed" },
   ];
 
   return `
@@ -128,6 +127,7 @@ export function renderArchitectureSection() {
       title: "Production Infrastructure",
       steps: [
         "Client",
+        "Reverse Proxy",
         "API",
         "Redis / Kafka",
         "PostgreSQL",
@@ -164,8 +164,8 @@ export function renderProductionEngineeringSection() {
       body: "Docker-based deployment for consistent behavior between development and production environments.",
     },
     {
-      title: "Deployment Targets",
-      body: "Provisioned a Contabo VPS from scratch in 4 days (first use of the stack) and run DevOps for 20+ containerized apps, alongside Render and Coolify.",
+      title: "Infrastructure Migration",
+      body: "Migrated from managed hosting to a self-managed Contabo VPS with Coolify orchestration and a Traefik reverse proxy, running 20+ containerized applications.",
     },
     {
       title: "Connection Pooling",
@@ -176,8 +176,8 @@ export function renderProductionEngineeringSection() {
       body: "Deployments gated on schema migrations and health checks, so a rollout doesn't outrun the database it depends on.",
     },
     {
-      title: "Scalability Analysis",
-      body: "Modeled platform behavior from 10 to 500+ concurrent users and right-sized vertical scaling, cutting infrastructure costs 60%.",
+      title: "Capacity Modelling",
+      body: "Modeled platform behavior across concurrent-user ranges and right-sized infrastructure accordingly, reducing costs without sacrificing headroom.",
     },
   ];
 
@@ -204,38 +204,116 @@ export function renderProductionEngineeringSection() {
   `;
 }
 
-export function renderPerformanceCaseStudySection() {
-  const steps = [
-    { label: "Problem", text: "One TracTrac dashboard screen was generating 60+ backend requests on load." },
+export function renderTracTracCaseStudiesSection() {
+  const caseStudies = [
     {
-      label: "Investigation",
-      text: "Traced the request fan-out to inefficient, per-widget client-side data loading rather than a single page-scoped fetch.",
+      title: "Offline-First Field Operations",
+      challenge:
+        "Field agents and farmers request tractors and labour-saving devices from areas with unreliable or no connectivity — the system has to tolerate delayed synchronization, retries, duplicate requests, and eventual consistency rather than assuming an always-on connection.",
+      approach:
+        "Led the design and implementation of an offline-first system for these requests, replacing a paid third-party data-collection tool the platform previously relied on.",
+      outcome:
+        "Expanded digital access for remote farming communities who couldn't reliably reach the platform's core APIs directly.",
     },
     {
-      label: "Engineering response",
-      text: "Redesigned the loading architecture around page-scoped data fetching and server-computed summary endpoints instead of client-side fan-out, and documented the decision as an architectural record (ADR).",
+      title: "Diagnosing a Production Dashboard Under Load",
+      challenge:
+        "An administrative dashboard began failing intermittently under load, generating 60+ backend requests per page load — a classic request fan-out problem, but the root cause wasn't obvious from the symptoms alone.",
+      approach:
+        "Investigated systematically rather than guessing: database performance, caching behavior, locking, pagination, and aggregate-query behavior were all examined before deciding on a fix.",
+      outcome:
+        "Redesigned the dashboard around page-scoped fetching and server-computed, cached summaries — while preserving the existing response contract — and documented the decision as an ADR to prevent regression.",
     },
     {
-      label: "Outcome",
-      text: "Reduced the dashboard's request volume and left a documented reference point so future dashboard screens don't regress into the same pattern.",
+      title: "Infrastructure Migration to Self-Managed Hosting",
+      challenge:
+        "Moving from managed hosting toward infrastructure the team fully controls, without sacrificing reliability during the transition.",
+      approach:
+        "Provisioned and migrated services to a self-managed Contabo VPS with Coolify for container orchestration and a Traefik reverse proxy, running 20+ containerized applications with PgBouncer managing database connections.",
+      outcome:
+        "Full operational ownership of the deployment path — capacity modelling and right-sizing now directly inform infrastructure costs instead of a managed provider's pricing tiers.",
+    },
+    {
+      title: "Payment & Financial Reconciliation",
+      challenge:
+        "Financial calculations in a payments system can't tolerate floating-point rounding errors — reconciliation has to be exact, and concurrent writes can't corrupt balances.",
+      approach:
+        "Implemented concurrency-safe financial reconciliation using precise decimal arithmetic, integrated with Paystack for payment processing.",
+      outcome:
+        "Reliable payment reconciliation as part of TracTrac's core operational systems.",
+    },
+    {
+      title: "Geospatial Farm Measurement",
+      challenge:
+        "Determining farm area from GPS coordinates captured in the field, where signal noise and inconsistent walking paths make raw coordinates unreliable.",
+      approach:
+        "Built GPS-based farm measurement using geospatial calculations against a PostgreSQL/PostGIS data layer.",
+      outcome:
+        "A working measurement workflow integrated into the platform's booking and service-delivery flow.",
     },
   ];
 
   return `
-    <section class="card section-panel">
-      <span class="section-eyebrow">Performance Case Study</span>
-      <h2>The 60-request dashboard</h2>
-      <div class="case-study-steps">
-        ${steps
+    <section id="case-studies" class="card section-panel">
+      <span class="section-eyebrow">TracTrac Case Studies</span>
+      <h2>Engineering problems, not a technology list</h2>
+      <p class="section-intro">
+        TracTrac is a production system operating in a real agricultural environment, not a demo. These are
+        the engineering problems behind it.
+      </p>
+      <div class="case-study-grid">
+        ${caseStudies
           .map(
-            (step) => `
-              <div class="case-study-step">
-                <p class="case-study-step-label">${escapeHtml(step.label)}</p>
-                <p>${escapeHtml(step.text)}</p>
-              </div>
+            (study) => `
+              <article class="case-study-card">
+                <h3>${escapeHtml(study.title)}</h3>
+                <div class="case-study-steps">
+                  <div class="case-study-step">
+                    <p class="case-study-step-label">Challenge</p>
+                    <p>${escapeHtml(study.challenge)}</p>
+                  </div>
+                  <div class="case-study-step">
+                    <p class="case-study-step-label">Approach</p>
+                    <p>${escapeHtml(study.approach)}</p>
+                  </div>
+                  <div class="case-study-step">
+                    <p class="case-study-step-label">Outcome</p>
+                    <p>${escapeHtml(study.outcome)}</p>
+                  </div>
+                </div>
+              </article>
             `
           )
           .join("")}
+      </div>
+    </section>
+  `;
+}
+
+export function renderDataSystemsSection() {
+  return `
+    <section id="data-systems" class="card section-panel">
+      <span class="section-eyebrow">Data & Decision Systems</span>
+      <h2>Where this is heading</h2>
+      <div class="prose">
+        <p class="muted">
+          The backend systems I operate already generate and move a substantial amount of operational
+          data — farmers, mechanization requests, tractor activity, geographic locations, payments,
+          service delivery, and field events. At TracTrac, I built reporting infrastructure that reconciles
+          platform and field data into monitoring on hectares mechanized, farmers reached, revenue,
+          cooperatives, and service delivery — the operational picture a program needs to make decisions.
+        </p>
+        <p class="muted">
+          That's the natural bridge from backend engineering to data science: I already build the systems
+          that generate and operationalize this data. Advanced training in data science and decision
+          analytics is how I'd go further — turning that data into forecasting, optimization, and better
+          operational decisions, rather than just moving it reliably from one system to another.
+        </p>
+        <p class="muted">
+          To be clear about where I am today: this is a direction I'm building toward, not a claim of
+          current machine learning research or production ML deployment. My production work right now is
+          backend and data infrastructure engineering — the foundation that kind of work depends on.
+        </p>
       </div>
     </section>
   `;
@@ -253,7 +331,7 @@ export function renderPhilosophySection() {
     },
     {
       title: "Observability",
-      body: "Instrument systems so problems are diagnosable, not just detectable — the dashboard investigation started with looking at what was actually being requested.",
+      body: "Instrument systems so problems are diagnosable, not just detectable — measurement before assumptions.",
     },
     {
       title: "Performance",
@@ -289,6 +367,8 @@ const SKILL_GROUP_ORDER = [
   "Backend",
   "Data",
   "Distributed Systems",
+  "Geospatial",
+  "Payments",
   "Cloud & Infrastructure",
   "DevOps",
   "Integrations",

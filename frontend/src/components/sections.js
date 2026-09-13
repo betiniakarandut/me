@@ -71,6 +71,16 @@ export function renderHeroSection(profile, skills) {
         <p class="kicker">${escapeHtml(profile.title)}</p>
         <h1>${escapeHtml(profile.name)}</h1>
         <p class="lead">${escapeHtml(profile.tagline)}</p>
+        <div class="hero-actions">
+          <a class="cta-radio-btn cta-radio-btn-primary" href="#systems">
+            <span class="cta-radio-icon" aria-hidden="true"></span>
+            <span>View Selected Work</span>
+          </a>
+          <a class="cta-radio-btn cta-radio-btn-secondary" href="/resume.pdf" target="_blank" rel="noreferrer">
+            <span class="cta-radio-icon" aria-hidden="true"></span>
+            <span>Download Resume</span>
+          </a>
+        </div>
         <div class="chips">${skillMarkup}</div>
       </section>
     </section>
@@ -80,8 +90,8 @@ export function renderHeroSection(profile, skills) {
 export function renderJourneySection(journey) {
   return `
     <section class="card section-panel">
-      <span class="section-eyebrow">Timeline</span>
-      <h2>Journey</h2>
+      <span class="section-eyebrow">Engineering Journey</span>
+      <h2>Chemical Engineering to backend & cloud engineering</h2>
       <div class="timeline">
         ${
           journey.length
@@ -207,8 +217,8 @@ export function renderProjectsSection(projects) {
 export function renderArticlesSection(articles) {
   return `
     <section class="card section-panel">
-      <span class="section-eyebrow">Writing</span>
-      <h2>Writing</h2>
+      <span class="section-eyebrow">Technical Writing</span>
+      <h2>Writing on production systems and engineering decisions</h2>
       <div class="experience-grid">
         ${
           articles.length
@@ -286,8 +296,10 @@ export function renderNavbar(profile) {
           <a href="#about">About</a>
           <a href="#highlights">Highlights</a>
           <a href="#systems">Systems</a>
+          <a href="#case-studies">Case Studies</a>
           <a href="#architecture">Architecture</a>
           <a href="#journey-experience">Experience</a>
+          <a href="#data-systems">Data</a>
           <a href="#stack">Stack</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -323,42 +335,30 @@ export function renderAboutSection(profile) {
   `;
 }
 
-export function renderChallengesSection() {
+export function renderCommunityServiceSection() {
   return `
-    <section id="challenges" class="card section-panel">
-      <span class="section-eyebrow">Challenges</span>
-      <h2>Challenges</h2>
+    <section id="community" class="card section-panel">
+      <span class="section-eyebrow">Community & Service</span>
+      <h2>Beyond employment</h2>
       <div class="experience-grid">
         <article class="experience-card">
-          <h3>Career Transition</h3>
-          <p>Moved from Chemical Engineering into software engineering while balancing academics and internships.</p>
+          <h3>Clean Sweep Community — Abuja, Nigeria</h3>
+          <p class="role">Volunteer</p>
+          <p>
+            Participated in community cleanup activities at a refuse dump site, helping clear and pack
+            waste and advocating for practical waste-bin solutions to improve local waste management.
+          </p>
         </article>
         <article class="experience-card">
-          <h3>Production Readiness</h3>
-          <p>Built confidence in shipping backend services with testing, observability, and iterative improvements.</p>
-        </article>
-        <article class="experience-card">
-          <h3>Scale and Reliability</h3>
-          <p>Navigated real-world constraints across API design, async jobs, and integrations in fast-moving teams.</p>
+          <h3>Agricultural Field Engagement — Nasarawa & Kaduna</h3>
+          <p class="role">Field training, TracTrac</p>
+          <p>
+            Participated in field training and engagement with mechanization service providers in
+            Nasarawa and Kaduna, gaining direct exposure to the operational realities the platform is
+            designed to support.
+          </p>
         </article>
       </div>
-    </section>
-  `;
-}
-
-export function renderPersonalLifeSection() {
-  return `
-    <section id="personal-life" class="card section-panel">
-      <span class="section-eyebrow">Beyond Engineering</span>
-      <h2>Personal Life/Encounters</h2>
-      <p class="muted">
-        Beyond code, I value resilience, discipline, and growth. My encounters across mentorship, teamwork,
-        and self-driven learning have shaped how I solve problems and support people.
-      </p>
-      <p class="muted">
-        I enjoy sharing lessons from engineering projects, cloud experiments, and practical insights that help
-        upcoming developers build with confidence.
-      </p>
     </section>
   `;
 }
@@ -377,6 +377,10 @@ export function renderCtaSection(profile) {
         <a class="cta-radio-btn cta-radio-btn-secondary" href="${escapeHtml(email)}">
           <span class="cta-radio-icon" aria-hidden="true"></span>
           <span>Email Me</span>
+        </a>
+        <a class="cta-radio-btn cta-radio-btn-secondary" href="/resume.pdf" target="_blank" rel="noreferrer">
+          <span class="cta-radio-icon" aria-hidden="true"></span>
+          <span>Download Resume</span>
         </a>
       </div>
     </section>

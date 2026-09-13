@@ -19,24 +19,25 @@ def seed_initial_data(db: Session) -> None:
         name="Betini Akarandut",
         title="Backend & Cloud Engineer",
         tagline=(
-            "I design, build, deploy, and operate production systems across distributed backends, "
-            "cloud infrastructure, databases, payments, and real-time platforms."
+            "Building reliable, data-driven systems for real-world environments."
         ),
         bio=(
-            "I'm a Backend & Cloud Engineer with 3+ years designing, building, deploying, and operating "
-            "production systems. I currently run two production FastAPI backends at TracTrac serving "
-            "60,000+ registered users on a nationwide agricultural mechanization and logistics platform, "
-            "and build backend services for the Job Simulator AI platform at Join Momentum. Recent "
-            "engagements include SolarAfRiC (context-aware AI diagnostics and escrow-style payments), "
-            "VITAL 2 (offline-sync field operations that onboarded 5,000+ farmers), and SUBSEL (wallet "
-            "and VTU infrastructure). "
+            "I design and operate backend systems, distributed services, and cloud infrastructure for "
+            "applications at the intersection of technology, agriculture, and emerging markets. I lead "
+            "backend and infrastructure work at TracTrac Mechanisation Services Limited (TracTrac), a "
+            "Nigerian agricultural mechanization platform supporting farmers and service providers across "
+            "low-connectivity environments — architecting two production FastAPI backends serving "
+            "60,000+ registered users, offline-first field systems, geospatial services, and payment "
+            "infrastructure. I've since co-founded SUBSEL Digital Services, a pre-launch venture, and "
+            "earlier built production systems at SolarAfRiC, VITAL 2, and Join Momentum. "
             "\n\n"
-            "I started in Chemical Engineering before transitioning into backend engineering through ALX "
-            "Africa. Today I focus on the parts of a system that have to hold up in production — data "
-            "consistency, caching strategy, deployment hardening, and cost-efficient infrastructure: at "
-            "TracTrac alone, capacity modeling and right-sized infrastructure cut hosting costs by 60%, "
-            "while an offline-first system I proposed and led fully replaced a paid third-party "
-            "data-collection tool, eliminating ₦5M+ in annual third-party costs."
+            "My BEng in Chemical Engineering gave me a quantitative foundation in mathematics, statistics, "
+            "numerical methods, mathematical modelling, and operations research before I moved into "
+            "software engineering. That foundation still shapes how I approach backend work: the systems "
+            "I build at TracTrac already generate and reconcile operational data — hectares mechanized, "
+            "farmers reached, revenue, service delivery — and I'm pursuing advanced training in data "
+            "science and decision analytics to take that data further, toward better operational and "
+            "development decisions."
         ),
         location="FCT-Abuja, Nigeria",
         email="betiniakarandut@gmail.com",
@@ -49,100 +50,88 @@ def seed_initial_data(db: Session) -> None:
     db.add_all(
         [
             JourneyEvent(
-                title="Tech Journey Started",
-                event_date="2022-01-14",
-                description="Started learning software engineering while studying 400L Chemical Engineering.",
+                title="B.Eng. Chemical Engineering — University of Port Harcourt",
+                event_date="2017",
+                description=(
+                    "Built a quantitative foundation in calculus, probability & statistics, numerical "
+                    "methods, mathematical modelling & operations research, and computer programming. "
+                    "Graduated 2024, CGPA 3.72/5.00, Second Class Honours (Upper Division)."
+                ),
                 sort_order=1,
             ),
             JourneyEvent(
-                title="Web Developer Course – Zero To Mastery Academy",
-                event_date="2022-01-14",
-                description="Studied web development with JavaScript and Node.js through Zero To Mastery Academy, completing certification in late March 2022.",
+                title="Started Software Engineering",
+                event_date="2022-01",
+                description=(
+                    "Began learning software engineering while completing Chemical Engineering — web "
+                    "development (Zero To Mastery Academy) and AWS Machine Learning Foundations (Udacity)."
+                ),
                 sort_order=2,
             ),
             JourneyEvent(
-                title="Python Developer Intern – Scoplex Technologies",
-                event_date="2022-02",
-                description="First professional role at an oil servicing company in Port Harcourt.",
+                title="ALX Africa Software Engineering Certification",
+                event_date="2022-09",
+                description=(
+                    "Completed ALX Africa's software engineering program, including a backend/DevOps "
+                    "engineering placement in Kigali, Rwanda (Jan–Oct 2023)."
+                ),
                 sort_order=3,
             ),
             JourneyEvent(
-                title="AWS ML Foundations – Udacity",
-                event_date="2022-08",
-                description="Completed AWS Machine Learning Foundations apprenticeship.",
+                title="Early Backend Roles",
+                event_date="2022-02",
+                description=(
+                    "Backend engineering roles at Scoplex Technologies and Retiny, building APIs, "
+                    "authentication, and mobile-facing backend services."
+                ),
                 sort_order=4,
             ),
             JourneyEvent(
-                title="ALX Software Engineering Program",
-                event_date="2022-09",
-                description="Began a comprehensive software engineering training program with ALX Africa, including a backend/DevOps engineering placement in Kigali, Rwanda.",
+                title="Backend Developer — Join Momentum",
+                event_date="2024-06",
+                description=(
+                    "Designed backend APIs for an AI-powered job simulation platform, through Jan 2025."
+                ),
                 sort_order=5,
             ),
             JourneyEvent(
-                title="Graduated ALX Software Engineering",
-                event_date="2023-11",
-                description="Completed ALX program, specializing in backend development for the final months.",
+                title="Lead Backend/DevOps Engineer — TracTrac",
+                event_date="2025-02",
+                description=(
+                    "Took on backend and infrastructure leadership for a nationwide agricultural "
+                    "mechanization platform — production systems operating directly in the field, not "
+                    "just behind a dashboard."
+                ),
                 sort_order=6,
             ),
             JourneyEvent(
-                title="Joined United People Global",
-                event_date="2023-12",
-                description="Became a full-time member contributing to UN Sustainable Development Goals.",
+                title="SolarAfRiC & VITAL 2 — Data-Intensive Field Systems",
+                event_date="2026-04",
+                description=(
+                    "Delivered production backends for an AI-assisted diagnostics platform (SolarAfRiC) "
+                    "and a farmer field-operations platform (VITAL 2) — both generating operational data "
+                    "under real field constraints."
+                ),
                 sort_order=7,
             ),
             JourneyEvent(
-                title="Extern – Market Research Analyst",
-                event_date="2024-03",
-                description="Completed a research internship identifying top policy influencers in North America across Environment, Labor, and Community Impact domains.",
+                title="Co-Founder — SUBSEL Digital Services",
+                event_date="2026-09",
+                description=(
+                    "Co-founded a pre-launch digital services venture, building product and engineering "
+                    "leadership experience alongside backend work."
+                ),
                 sort_order=8,
             ),
             JourneyEvent(
-                title="Backend/Mobile Engineer – Retiny",
-                event_date="2024-03",
-                description="Designed a YouTube-style API with Swagger docs, 2FA, third-party OAuth, and role-based mobile routes; introduced error-handling standards and Nginx load balancing.",
+                title="Toward Data & Decision Systems",
+                event_date="2026",
+                description=(
+                    "Pursuing advanced training in data science and decision analytics, building on "
+                    "reporting infrastructure already built in production — the natural next step from "
+                    "operating systems that generate data to turning that data into decisions."
+                ),
                 sort_order=9,
-            ),
-            JourneyEvent(
-                title="Back End Developer – Join Momentum",
-                event_date="2024-06",
-                description="Joined Join Momentum designing scalable APIs for the Job Simulator AI platform.",
-                sort_order=10,
-            ),
-            JourneyEvent(
-                title="Extern Ambassador",
-                event_date="2024-04",
-                description="Became a full-time Extern Ambassador, representing the platform in the US remotely.",
-                sort_order=11,
-            ),
-            JourneyEvent(
-                title="Lead Backend/DevOps Engineer – TracTrac",
-                event_date="2025-02",
-                description="Took on a lead backend/DevOps role architecting and operating production systems for a nationwide agricultural mechanization and logistics platform.",
-                sort_order=12,
-            ),
-            JourneyEvent(
-                title="Backend/DevOps Contract – SolarAfRiC (Feexet Limited)",
-                event_date="2026-04",
-                description="Began a backend/DevOps contract engineering, solo and end-to-end, the backend behind SolarAfRiC's context-aware AI diagnostics and escrow-style payment platform.",
-                sort_order=13,
-            ),
-            JourneyEvent(
-                title="Backend/DevOps Engineer – VITAL 2 (Ikore International Development)",
-                event_date="2026-05",
-                description="Delivered a production-ready farmer field operations platform within 6 weeks of program flag-off, onboarding 5,000+ farmers.",
-                sort_order=14,
-            ),
-            JourneyEvent(
-                title="Fullstack Engineer – SUBSEL",
-                event_date="2026-07",
-                description="Took on a fullstack role at SUBSEL, building wallet-ledger, VTU, and marketplace infrastructure.",
-                sort_order=15,
-            ),
-            JourneyEvent(
-                title="60% Infrastructure Cost Reduction at TracTrac",
-                event_date="2026-09",
-                description="TracTrac's platform now serves 60,000+ registered users across two production FastAPI backends; capacity modeling and right-sized infrastructure cut hosting costs by 60%.",
-                sort_order=16,
             ),
         ]
     )
@@ -165,7 +154,7 @@ def seed_initial_data(db: Session) -> None:
             ),
             Scholarship(
                 name="Software Engineering Certification",
-                issuer="ALX-Holberton School",
+                issuer="ALX / Holberton School",
                 year="2023",
                 description="Certified software engineering training covering Python, Node.js, and backend specialization.",
                 sort_order=3,
@@ -181,11 +170,11 @@ def seed_initial_data(db: Session) -> None:
                 name="AWS Machine Learning Foundations",
                 issuer="AWS / Udacity",
                 year="2022",
-                description="AWS Machine Learning Foundations track — data analysis and ML fundamentals.",
+                description="Scholarship recipient — data analysis and ML fundamentals track.",
                 sort_order=5,
             ),
             Scholarship(
-                name="Hacktoberfest'22 Winner",
+                name="Hacktoberfest Winner",
                 issuer="Hacktoberfest",
                 year="2022",
                 description="Recognized for open-source contribution.",
@@ -204,24 +193,27 @@ def seed_initial_data(db: Session) -> None:
                 end_date=None,
                 is_current=True,
                 summary=(
-                    "Architect and operate two production FastAPI backends serving 60,000+ registered "
-                    "users on a nationwide agricultural mechanization and logistics platform. Proposed and "
-                    "led design/implementation of an offline-first system for tractor and labour-saving-device "
-                    "requests in low-connectivity areas — now the platform's highest demand-generation and "
-                    "fulfillment channel for remote farmers, fully replacing the paid third-party (CommCare) "
-                    "data-collection tool. Provisioned a Contabo VPS from scratch in 4 days (first use of "
-                    "the stack) and manage DevOps for 20+ containerized apps with health checks and "
-                    "migration-gated rollouts; cut infrastructure costs by 60% via capacity modeling "
-                    "(10 → 500+ concurrent users) and right-sized vertical scaling. Designed Kafka + "
-                    "outbox-pattern event flows, Redis caching (incl. JWT hot-path), and PgBouncer "
-                    "transaction pooling over PostgreSQL/PostGIS for reliable cross-service messaging. "
-                    "Built GPS-based 'Measure a Farm' and offline sync/reconciliation workflows; integrated "
-                    "Paystack with automated reconciliation, 20+ operational dashboards, and real-time "
-                    "notifications (Socket.IO, Firebase). Diagnosed a dashboard firing 60+ backend requests "
-                    "per load; redesigned it around page-scoped fetching and server-computed summaries, "
-                    "documented as an ADR to prevent regression. Deliver monthly and quarterly technical "
-                    "reports for Mastercard Foundation (donor) documentation and ETK monitoring under the "
-                    "ISSAM program."
+                    "Architect and operate two production FastAPI backends for TracTrac Mechanisation "
+                    "Services Limited (TracTrac), a nationwide agricultural mechanization and logistics "
+                    "platform serving 60,000+ registered users. Led an offline-first system for tractor "
+                    "and labour-saving-device requests in low-connectivity areas, expanding digital access "
+                    "for remote farming communities and replacing a paid third-party data-collection tool. "
+                    "Built reporting infrastructure that reconciles platform and field data for monitoring "
+                    "hectares mechanized, farmers reached, revenue, cooperatives, states, and service "
+                    "delivery. Built GPS-based farm measurement and offline synchronization/reconciliation "
+                    "workflows, alongside payment, notification, and operational systems. Provisioned and "
+                    "migrated infrastructure to a self-managed Contabo VPS and Coolify, running 20+ "
+                    "containerized applications and reducing infrastructure costs through capacity "
+                    "modelling and right-sizing. Designed Kafka/outbox event flows, Redis caching, "
+                    "PostgreSQL/PostGIS infrastructure, Celery workers, and PgBouncer transaction pooling. "
+                    "Diagnosed a production dashboard issue involving intermittent failures under load, "
+                    "driven by request fan-out; investigated database performance, caching, locking, "
+                    "pagination, and aggregate-query behavior, then redesigned the dashboard around "
+                    "page-scoped fetching and server-computed, cached summaries while preserving the "
+                    "existing response contract — documented as an ADR. Provided field and technical "
+                    "support and trained mechanization service providers in Nasarawa and Kaduna on the "
+                    "technology supporting smallholder farmers. Deliver monthly and quarterly technical "
+                    "reporting supporting program monitoring and donor documentation."
                 ),
                 sort_order=1,
             ),
@@ -233,13 +225,11 @@ def seed_initial_data(db: Session) -> None:
                 end_date="2026-06",
                 is_current=False,
                 summary=(
-                    "Engineered the backend for a context-aware AI diagnostics platform (vision input, "
-                    "structured LLM outputs, equipment/location/technician/LMS context) in active production "
-                    "for solar equipment servicing. Built an escrow-style payment lifecycle with payout "
-                    "wallets, bank resolution, and dispute workflows, holding customer funds safely until "
-                    "work verification. Implemented real-time technician chat (WebSockets + FCM push), a "
-                    "3-tier file storage fallback, and an LMS with automated certificate generation — "
-                    "delivered solo, end-to-end."
+                    "Engineered backend infrastructure for an AI-assisted solar equipment diagnostics "
+                    "platform integrating vision inputs, structured LLM outputs, equipment/location data, "
+                    "and technician context. Built escrow-style payments, technician communication, "
+                    "file-storage fallback, and learning-management workflows end-to-end, delivered "
+                    "independently from architecture through production implementation."
                 ),
                 sort_order=2,
             ),
@@ -251,45 +241,45 @@ def seed_initial_data(db: Session) -> None:
                 end_date="2026-08",
                 is_current=False,
                 summary=(
-                    "Delivered a production-ready farmer field operations platform within 6 weeks of "
-                    "program flag-off; 5,000+ farmers onboarded via offline data capture in low-connectivity "
-                    "areas. Ran voucher campaigns with QR-code workflows driving a 15% lift in farmer "
-                    "onboarding; built bulk data import with rollback and audit trails for field data "
-                    "integrity. Sole backend engineer serving 2 frontend engineers (mobile & web); "
-                    "represented the team during peak periods, owning update requests, bug fixes, and "
-                    "post-review user feedback."
+                    "Delivered a production-ready farmer field-operations platform within six weeks, "
+                    "supporting offline data capture in low-connectivity areas and onboarding 5,000+ "
+                    "farmers. Built voucher and QR-code workflows contributing to a 15% increase in "
+                    "farmer onboarding, alongside bulk data import with rollback and audit trails. Served "
+                    "as the sole backend engineer supporting two frontend engineers, owning backend "
+                    "updates, bug resolution, production support, and post-review improvements."
                 ),
                 sort_order=3,
             ),
             Experience(
-                company="SUBSEL",
-                role="Fullstack Engineer",
+                company="SUBSEL Digital Services",
+                role="Co-Founder — Product & Engineering Lead",
                 location="Remote",
-                start_date="2026-07",
-                end_date="2026-09",
-                is_current=False,
+                start_date="2026-09",
+                end_date=None,
+                is_current=True,
                 summary=(
-                    "Built wallet-ledger and VTU infrastructure spanning subscriptions, rewards marketplace, "
-                    "multiple payment-provider integrations, and referral/commission logic, kept cleanly "
-                    "decoupled by design. Implemented asynchronous processing for payment and provisioning "
-                    "flows across backend services and a React/TypeScript frontend."
+                    "Co-founded a digital services venture — vision: \"Where Innovation Meets "
+                    "Opportunity.\" Building platform infrastructure spanning marketplace, payments, "
+                    "subscriptions, rewards, and commission workflows, developed alongside my younger "
+                    "brother as part of supporting his professional development in digital marketing. "
+                    "Pre-launch: no public users or revenue yet."
                 ),
                 sort_order=4,
             ),
             Experience(
                 company="Join Momentum",
-                role="Back End Developer",
+                role="Backend Developer",
                 location="Dover, Delaware, United States · Remote",
                 start_date="2024-06",
-                end_date=None,
-                is_current=True,
+                end_date="2025-01",
+                is_current=False,
                 summary=(
-                    "Designed scalable APIs for the Job Simulator AI platform (Django REST Framework), "
-                    "reducing response time by 25%; integrated OpenAI GPT + LangChain for automated "
-                    "candidate feedback. Integrated digital badge APIs with secure OAuth2, boosting "
-                    "engagement by 40%; automated critical workflows, reducing errors by 30%. Mentored "
-                    "junior developers — two became key contributors — and collaborated in Agile Scrum "
-                    "sprints (Contentful CMS integration)."
+                    "Designed scalable Django REST APIs for an AI-powered Job Simulator platform, reducing "
+                    "response time by 25% and integrating OpenAI GPT and LangChain for automated candidate "
+                    "feedback. Integrated secure digital badge APIs using OAuth2, increasing engagement by "
+                    "40%, while automating workflows that reduced errors by 30%. Mentored junior "
+                    "developers, two of whom progressed into key contributors, while collaborating within "
+                    "Agile Scrum teams."
                 ),
                 sort_order=5,
             ),
@@ -301,8 +291,8 @@ def seed_initial_data(db: Session) -> None:
                 end_date="2024-06",
                 is_current=False,
                 summary=(
-                    "Designed a YouTube-style API (Swagger, 2FA, third-party OAuth, role-based mobile "
-                    "routes); introduced error-handling standards, Postman testing workflows, and Nginx "
+                    "Designed APIs with Swagger docs, 2FA, third-party OAuth, and role-based mobile "
+                    "routes; introduced standardized error handling, Postman testing workflows, and Nginx "
                     "load balancing."
                 ),
                 sort_order=6,
@@ -315,8 +305,8 @@ def seed_initial_data(db: Session) -> None:
                 end_date="2023-10",
                 is_current=False,
                 summary=(
-                    "Spearheaded secure authentication and user management; designed cross-service "
-                    "database schema; deployed APIs on AWS EC2 with logging, validation layers, and error "
+                    "Built secure authentication and user-management systems, designed cross-service "
+                    "database schemas, and deployed APIs on AWS EC2 with logging, validation, and error "
                     "tracking."
                 ),
                 sort_order=7,
@@ -331,31 +321,31 @@ def seed_initial_data(db: Session) -> None:
                 slug="tractrac-platform",
                 category="backend-systems",
                 summary=(
-                    "Production backend and distributed systems for a nationwide agricultural mechanization "
-                    "and logistics platform serving 60,000+ registered users."
+                    "Production backend and distributed systems for TracTrac Mechanisation Services "
+                    "Limited, a nationwide agricultural mechanization and logistics platform serving "
+                    "60,000+ registered users."
                 ),
-                tech_stack="FastAPI, PostgreSQL, PostGIS, Kafka, Redis, PgBouncer, Docker, Paystack",
+                tech_stack="FastAPI, PostgreSQL, PostGIS, Kafka, Redis, PgBouncer, Celery, Docker, Paystack",
                 challenge=(
                     "Field agents and farmers often operate with little or no connectivity, and the "
                     "platform needed to reliably synchronize GPS farm measurements, bookings, and payments "
-                    "across two backend services without losing data or double-processing events — while "
-                    "infrastructure spend had to stay lean on self-managed VPS hosting."
+                    "across two backend services — while also turning platform and field data into "
+                    "operational reporting that program partners could rely on."
                 ),
                 engineered=(
-                    "Proposed and led an offline-first system for tractor and labour-saving-device requests "
-                    "in low-connectivity areas, fully replacing a paid third-party (CommCare) data-collection "
-                    "tool. Designed Kafka and outbox-pattern event flows for reliable cross-service "
-                    "messaging, Redis caching (including JWT hot-path caching), and PgBouncer transaction-mode "
-                    "pooling in front of PostgreSQL/PostGIS. Built GPS-based farm measurement, 20+ operational "
-                    "dashboards, and provisioned a Contabo VPS from scratch to run 20+ containerized apps with "
-                    "health checks and migration-gated rollouts. Diagnosed a dashboard generating 60+ backend "
-                    "requests per load and redesigned its loading architecture, and cut infrastructure costs "
-                    "60% via capacity modeling (10 to 500+ concurrent users) and right-sized scaling."
+                    "Led an offline-first system for tractor and labour-saving-device requests in "
+                    "low-connectivity areas, replacing a paid third-party data-collection tool. Built "
+                    "reporting infrastructure reconciling platform and field data to monitor hectares "
+                    "mechanized, farmers reached, revenue, cooperatives, and service delivery. Designed "
+                    "Kafka/outbox event flows, Redis caching, PgBouncer transaction pooling in front of "
+                    "PostgreSQL/PostGIS, and Celery-based asynchronous processing. Provisioned and "
+                    "migrated infrastructure to a self-managed Contabo VPS and Coolify, running 20+ "
+                    "containerized applications."
                 ),
                 impact=(
-                    "Two production FastAPI backends now serve 60,000+ registered users; the offline-first "
-                    "system became the platform's highest demand-generation channel while eliminating ₦5M+ "
-                    "in annual third-party costs, and infrastructure spend dropped 60%."
+                    "Two production FastAPI backends now serve 60,000+ registered users, with an "
+                    "offline-first system expanding digital access for remote farming communities and "
+                    "operational reporting supporting program monitoring and donor documentation."
                 ),
                 featured=True,
                 sort_order=1,
@@ -376,16 +366,14 @@ def seed_initial_data(db: Session) -> None:
                     "to be held safely until work is verified."
                 ),
                 engineered=(
-                    "Built an application layer around an LLM combining vision input, structured JSON "
-                    "outputs, and equipment, location, technician, and LMS context to produce context-aware "
-                    "diagnostic assistance with safety/severity escalation. Engineered an escrow-style "
-                    "payment lifecycle with payout wallets, bank resolution, and a dispute workflow, a "
-                    "3-tier file storage fallback, real-time WebSocket chat with FCM push notifications, "
-                    "and an LMS with certificate generation."
+                    "Built an application layer around an LLM combining vision input, structured outputs, "
+                    "and equipment, location, and technician context. Engineered escrow-style payments, "
+                    "technician communication, a file-storage fallback, and learning-management workflows "
+                    "end-to-end."
                 ),
                 impact=(
-                    "Delivered solo, end-to-end, as a backend/DevOps contract engagement now in active "
-                    "production use for solar equipment diagnostics, bookings, and payments."
+                    "Delivered independently, from architecture through production implementation, as a "
+                    "backend/DevOps contract engagement."
                 ),
                 featured=True,
                 sort_order=2,
@@ -400,44 +388,47 @@ def seed_initial_data(db: Session) -> None:
                 ),
                 tech_stack="Python, PostgreSQL, QR code generation, offline-sync architecture",
                 challenge=(
-                    "Field agents onboarding farmers in low-connectivity rural areas needed to keep working "
-                    "offline, campaign/voucher data imported in bulk needed to be safe to roll back when "
-                    "it went wrong, and the platform had to reach production within a 6-week program window."
+                    "Field agents onboarding farmers in low-connectivity rural areas needed to keep "
+                    "working offline, campaign/voucher data imported in bulk needed to be safe to roll "
+                    "back when it went wrong, and the platform had to reach production within a six-week "
+                    "window."
                 ),
                 engineered=(
-                    "Designed offline-sync field operations workflows for low-connectivity environments, "
-                    "voucher-based campaign workflows with QR code generation, bulk data import with "
-                    "rollback, and audit trails for field data integrity — as the sole backend engineer "
-                    "serving 2 frontend engineers (mobile & web)."
+                    "Designed offline data-capture workflows for low-connectivity environments, "
+                    "voucher and QR-code workflows, and bulk data import with rollback and audit trails "
+                    "— as the sole backend engineer supporting two frontend engineers."
                 ),
                 impact=(
-                    "Delivered production-ready within 6 weeks of program flag-off; onboarded 5,000+ "
-                    "farmers, with voucher/QR campaigns driving a 15% lift in farmer onboarding."
+                    "Delivered production-ready within six weeks; onboarded 5,000+ farmers, with "
+                    "voucher/QR workflows contributing to a 15% increase in farmer onboarding."
                 ),
                 featured=True,
                 sort_order=3,
             ),
             Project(
-                title="SUBSEL — Digital Services & Wallet Platform",
+                title="SUBSEL Digital Services",
                 slug="subsel-platform",
-                category="fullstack",
+                category="entrepreneurial",
                 summary=(
-                    "Fullstack engineering on a digital services platform spanning wallet infrastructure, "
-                    "VTU, subscriptions, and a rewards marketplace."
+                    "Co-founded, pre-launch digital services venture — marketplace, payments, "
+                    "subscriptions, and rewards infrastructure."
                 ),
                 tech_stack="React, TypeScript, PostgreSQL, wallet & payment provider integrations",
                 challenge=(
-                    "The platform needed to support a wallet ledger, multiple payment providers, and a "
-                    "subscription/activation lifecycle alongside a referral and commission system, without "
-                    "the marketplace and payments logic becoming tangled."
+                    "Building a platform from zero as a founder rather than an employee — architecting a "
+                    "wallet ledger, multiple payment providers, and a subscription lifecycle alongside a "
+                    "referral system, without the marketplace and payments logic becoming tangled, while "
+                    "also owning product direction."
                 ),
                 engineered=(
-                    "Built wallet-ledger and VTU infrastructure spanning subscriptions, rewards marketplace, "
-                    "multiple payment-provider integrations, and referral/commission logic kept cleanly "
-                    "decoupled by design, plus asynchronous processing for payment and provisioning flows "
-                    "across backend services and a React/TypeScript frontend."
+                    "Co-founded with my younger brother; building wallet-ledger and marketplace "
+                    "infrastructure spanning subscriptions, rewards, and payment-provider integrations, "
+                    "kept cleanly decoupled by design."
                 ),
-                impact="Built full-time from July to September 2026.",
+                impact=(
+                    "Pre-launch: demonstrates product ownership, engineering leadership, and "
+                    "entrepreneurial execution — no public users or revenue yet."
+                ),
                 featured=True,
                 sort_order=4,
             ),
@@ -550,11 +541,11 @@ def seed_initial_data(db: Session) -> None:
             Skill(name="Flask", category="Backend", proficiency=3),
             Skill(name="Node.js", category="Backend", proficiency=4),
             Skill(name="REST API Design", category="Backend", proficiency=5),
-            Skill(name="WebSockets", category="Backend", proficiency=4),
+            Skill(name="WebSockets / Socket.IO", category="Backend", proficiency=4),
             Skill(name="OAuth2", category="Backend", proficiency=4),
             # Data
             Skill(name="PostgreSQL", category="Data", proficiency=5),
-            Skill(name="PostGIS", category="Data", proficiency=4),
+            Skill(name="TimescaleDB", category="Data", proficiency=3),
             Skill(name="Redis", category="Data", proficiency=4),
             Skill(name="MySQL", category="Data", proficiency=3),
             Skill(name="MongoDB", category="Data", proficiency=3),
@@ -562,20 +553,30 @@ def seed_initial_data(db: Session) -> None:
             Skill(name="Kafka", category="Distributed Systems", proficiency=4),
             Skill(name="Outbox Pattern", category="Distributed Systems", proficiency=4),
             Skill(name="Celery", category="Distributed Systems", proficiency=5),
+            # Geospatial
+            Skill(name="PostGIS", category="Geospatial", proficiency=3),
+            Skill(name="Shapely", category="Geospatial", proficiency=3),
+            Skill(name="pyproj", category="Geospatial", proficiency=3),
+            Skill(name="GPS / Geospatial Processing", category="Geospatial", proficiency=4),
+            # Payments
+            Skill(name="Paystack", category="Payments", proficiency=4),
+            Skill(name="Transaction Reconciliation", category="Payments", proficiency=4),
+            Skill(name="Decimal-Precision Financial Calculations", category="Payments", proficiency=4),
             # Cloud & Infrastructure
             Skill(name="Docker", category="Cloud & Infrastructure", proficiency=4),
             Skill(name="Linux / VPS", category="Cloud & Infrastructure", proficiency=4),
-            Skill(name="Render", category="Cloud & Infrastructure", proficiency=4),
+            Skill(name="Traefik", category="Cloud & Infrastructure", proficiency=3),
+            Skill(name="Nginx", category="Cloud & Infrastructure", proficiency=3),
             Skill(name="Coolify", category="Cloud & Infrastructure", proficiency=4),
+            Skill(name="Render", category="Cloud & Infrastructure", proficiency=4),
             Skill(name="AWS EC2", category="Cloud & Infrastructure", proficiency=3),
             Skill(name="GCP", category="Cloud & Infrastructure", proficiency=2),
             # DevOps
             Skill(name="Alembic", category="DevOps", proficiency=4),
             Skill(name="PgBouncer", category="DevOps", proficiency=4),
-            Skill(name="CI/CD", category="DevOps", proficiency=4),
+            Skill(name="CI/CD (GitHub Actions, Azure DevOps)", category="DevOps", proficiency=4),
             Skill(name="Health Checks", category="DevOps", proficiency=4),
             # Integrations
-            Skill(name="Paystack", category="Integrations", proficiency=4),
             Skill(name="Firebase / FCM", category="Integrations", proficiency=4),
             Skill(name="OpenAI (Vision & Structured Outputs)", category="Integrations", proficiency=4),
             Skill(name="LangChain", category="Integrations", proficiency=3),
