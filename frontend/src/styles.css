@@ -140,6 +140,14 @@ body {
   transition: background-color 180ms ease, border-color 180ms ease;
 }
 
+.network-icon svg,
+.network-icon img {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
 .network-icon:hover {
   background: var(--brand-100);
   border-color: var(--brand-300);

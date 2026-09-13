@@ -1,3 +1,11 @@
+import {
+  ICON_CODERLEGION,
+  ICON_GITHUB,
+  ICON_HASHNODE,
+  ICON_LINKEDIN,
+  ICON_X,
+  ICON_YOUTUBE,
+} from "./icons";
 import { escapeHtml, formatEventDate, renderParagraphs } from "../utils/format";
 
 function renderEmptyState(message) {
@@ -284,12 +292,12 @@ export function renderNavbar(profile) {
           <a href="#contact">Contact</a>
         </nav>
         <div class="network-icons" aria-label="Network links">
-          <a class="network-icon" href="${escapeHtml(linkedin)}" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
-          <a class="network-icon" href="${escapeHtml(github)}" target="_blank" rel="noreferrer" aria-label="GitHub">gh</a>
-          <a class="network-icon" href="${escapeHtml(hashnode)}" target="_blank" rel="noreferrer" aria-label="Hashnode">hn</a>
-          <a class="network-icon" href="${escapeHtml(coderlegion)}" target="_blank" rel="noreferrer" aria-label="CoderLegion">cl</a>
-          <a class="network-icon" href="${escapeHtml(twitter)}" target="_blank" rel="noreferrer" aria-label="Twitter">x</a>
-          <a class="network-icon" href="${escapeHtml(youtube)}" target="_blank" rel="noreferrer" aria-label="YouTube">yt</a>
+          <a class="network-icon" href="${escapeHtml(linkedin)}" target="_blank" rel="noreferrer" aria-label="LinkedIn">${ICON_LINKEDIN}</a>
+          <a class="network-icon" href="${escapeHtml(github)}" target="_blank" rel="noreferrer" aria-label="GitHub">${ICON_GITHUB}</a>
+          <a class="network-icon" href="${escapeHtml(hashnode)}" target="_blank" rel="noreferrer" aria-label="Hashnode">${ICON_HASHNODE}</a>
+          <a class="network-icon" href="${escapeHtml(coderlegion)}" target="_blank" rel="noreferrer" aria-label="CoderLegion">${ICON_CODERLEGION}</a>
+          <a class="network-icon" href="${escapeHtml(twitter)}" target="_blank" rel="noreferrer" aria-label="Twitter (X)">${ICON_X}</a>
+          <a class="network-icon" href="${escapeHtml(youtube)}" target="_blank" rel="noreferrer" aria-label="YouTube">${ICON_YOUTUBE}</a>
         </div>
       </div>
     </aside>
