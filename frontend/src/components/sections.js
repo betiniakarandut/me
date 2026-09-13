@@ -98,12 +98,14 @@ export function renderJourneySection(journey) {
 export function renderScholarshipsSection(scholarships) {
   return `
     <section class="card section-panel">
-      <span class="section-eyebrow">Scholarships</span>
-      <h2>Scholarships & Sponsored Training</h2>
+      <span class="section-eyebrow">Certifications</span>
+      <h2>Certifications & Achievements</h2>
       ${
         scholarships.length
-          ? `<ul>${scholarships.map((s) => `<li>${escapeHtml(s.name)} (${escapeHtml(s.year)})</li>`).join("")}</ul>`
-          : renderEmptyState("No scholarships found.")
+          ? `<ul>${scholarships
+              .map((s) => `<li>${escapeHtml(s.name)} — ${escapeHtml(s.issuer)} (${escapeHtml(s.year)})</li>`)
+              .join("")}</ul>`
+          : renderEmptyState("No certifications found.")
       }
     </section>
   `;
@@ -115,8 +117,8 @@ export function renderExperienceSection(experience) {
       <span class="section-eyebrow">Experience</span>
       <h2>Work Experience</h2>
       <p class="background-note">
-        Earlier background: Chemical Engineering &rarr; AWS ML Foundations (Udacity) and ALX Africa's
-        software engineering program &rarr; early backend internships at Scoplex and Retiny, plus research
+        Earlier background: Chemical Engineering &rarr; AWS ML Foundations (Udacity) and Zero To Mastery
+        Academy web development &rarr; an early backend internship at Scoplex Technologies, plus research
         work with Extern and community contribution with United People Global.
       </p>
       <div class="experience-grid">

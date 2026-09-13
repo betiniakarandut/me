@@ -18,12 +18,12 @@ export function renderHighlightsSection() {
     {
       tag: "PS",
       title: "Production Systems",
-      body: "Operate production backends serving 100,000+ registered users on TracTrac's platform, plus 5,000+ farmers onboarded through VITAL 2.",
+      body: "Operate production backends serving 60,000+ registered users on TracTrac's platform, plus 5,000+ farmers onboarded through VITAL 2.",
     },
     {
       tag: "OF",
       title: "Offline-First Systems",
-      body: "Designed synchronization and reconciliation architecture for field operations across low-connectivity rural environments at TracTrac and VITAL 2.",
+      body: "Proposed and led an offline-first system for low-connectivity field operations at TracTrac that fully replaced a paid third-party (CommCare) data-collection tool.",
     },
     {
       tag: "DS",
@@ -33,7 +33,7 @@ export function renderHighlightsSection() {
     {
       tag: "CD",
       title: "Cloud & DevOps",
-      body: "Containerized and deployed production services with Docker across VPS, Render, and Coolify, with migration-gated deployments and health checks.",
+      body: "Provisioned a VPS from scratch in 4 days and run DevOps for 20+ containerized apps; cut infrastructure costs 60% via capacity modeling and right-sized scaling.",
     },
     {
       tag: "$",
@@ -75,8 +75,9 @@ export function renderHighlightsSection() {
 
 export function renderStatsStrip() {
   const stats = [
-    { value: "100K+", label: "Registered users managed (TracTrac)" },
+    { value: "60K+", label: "Registered users managed (TracTrac)" },
     { value: "5K+", label: "Farmers onboarded (VITAL 2)" },
+    { value: "60%", label: "Infrastructure cost cut at TracTrac" },
     { value: "5", label: "Production platforms across 4 companies" },
   ];
 
@@ -130,7 +131,7 @@ export function renderArchitectureSection() {
         "API",
         "Redis / Kafka",
         "PostgreSQL",
-        "External Services (Paystack, Firebase, CommCare)",
+        "External Services (Paystack, Firebase)",
       ],
     },
   ];
@@ -164,7 +165,7 @@ export function renderProductionEngineeringSection() {
     },
     {
       title: "Deployment Targets",
-      body: "Services deployed and maintained across self-managed VPS infrastructure, Render, and Coolify.",
+      body: "Provisioned a Contabo VPS from scratch in 4 days (first use of the stack) and run DevOps for 20+ containerized apps, alongside Render and Coolify.",
     },
     {
       title: "Connection Pooling",
@@ -176,7 +177,7 @@ export function renderProductionEngineeringSection() {
     },
     {
       title: "Scalability Analysis",
-      body: "Modeled platform behavior from 10 to 500+ concurrent users to plan capacity ahead of growth.",
+      body: "Modeled platform behavior from 10 to 500+ concurrent users and right-sized vertical scaling, cutting infrastructure costs 60%.",
     },
   ];
 
