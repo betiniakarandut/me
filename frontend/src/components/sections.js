@@ -263,10 +263,11 @@ export function renderTopAlert(errors) {
 export function renderNavbar(profile) {
   const brand = profile?.name || "Betini Akarandut";
   const github = profile?.github_url || "https://github.com/betiniakarandut";
-  const linkedin = profile?.linkedin_url || "https://www.linkedin.com/in/betini-akarandut/";
+  const linkedin = profile?.linkedin_url || "https://www.linkedin.com/in/betiniakarandut/";
   const hashnode = profile?.hashnode_url || "https://hashnode.com/@betiniakarandut";
   const twitter = "https://x.com/betiniakarandut";
   const youtube = "https://www.youtube.com/@betiniakarandut";
+  const coderlegion = "https://coderlegion.com/user/Betini+Akarandut";
 
   return `
     <aside class="side-nav card">
@@ -286,6 +287,7 @@ export function renderNavbar(profile) {
           <a class="network-icon" href="${escapeHtml(linkedin)}" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
           <a class="network-icon" href="${escapeHtml(github)}" target="_blank" rel="noreferrer" aria-label="GitHub">gh</a>
           <a class="network-icon" href="${escapeHtml(hashnode)}" target="_blank" rel="noreferrer" aria-label="Hashnode">hn</a>
+          <a class="network-icon" href="${escapeHtml(coderlegion)}" target="_blank" rel="noreferrer" aria-label="CoderLegion">cl</a>
           <a class="network-icon" href="${escapeHtml(twitter)}" target="_blank" rel="noreferrer" aria-label="Twitter">x</a>
           <a class="network-icon" href="${escapeHtml(youtube)}" target="_blank" rel="noreferrer" aria-label="YouTube">yt</a>
         </div>
@@ -375,10 +377,11 @@ export function renderCtaSection(profile) {
 
 export function renderSiteFooter(profile) {
   const github = profile?.github_url || "https://github.com/betiniakarandut";
-  const linkedin = profile?.linkedin_url || "https://www.linkedin.com/in/betini-akarandut/";
+  const linkedin = profile?.linkedin_url || "https://www.linkedin.com/in/betiniakarandut/";
   const hashnode = profile?.hashnode_url || "https://hashnode.com/@betiniakarandut";
   const twitter = "https://x.com/betiniakarandut";
   const youtube = "https://www.youtube.com/@betiniakarandut";
+  const coderlegion = "https://coderlegion.com/user/Betini+Akarandut";
 
   return `
     <footer class="site-footer card section-panel">
@@ -387,6 +390,7 @@ export function renderSiteFooter(profile) {
         <a href="${escapeHtml(hashnode)}" target="_blank" rel="noreferrer">Hashnode</a>
         <a href="${escapeHtml(github)}" target="_blank" rel="noreferrer">GitHub</a>
         <a href="${escapeHtml(linkedin)}" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="${escapeHtml(coderlegion)}" target="_blank" rel="noreferrer">CoderLegion</a>
         <a href="${escapeHtml(twitter)}" target="_blank" rel="noreferrer">Twitter</a>
         <a href="${escapeHtml(youtube)}" target="_blank" rel="noreferrer">YouTube</a>
       </div>
