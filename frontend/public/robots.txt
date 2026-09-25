@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://betiniakarandut.com/sitemap.xml

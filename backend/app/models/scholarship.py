@@ -11,6 +11,8 @@ class Scholarship(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     name: Mapped[str] = mapped_column(String(180))
+    # The table predates this column; rows are certifications, scholarships or awards.
+    category: Mapped[str] = mapped_column(String(40), default="certification", server_default="certification")
     issuer: Mapped[str] = mapped_column(String(120))
     year: Mapped[str] = mapped_column(String(20))
     description: Mapped[str] = mapped_column(Text, default="")

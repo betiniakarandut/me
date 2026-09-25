@@ -1,11 +1,31 @@
 import { API_BASE_URL } from "../config";
 
-async function request(path, options = {}) {
-  const response = await fetch(`${API_BASE_URL}${path}`, options);
-  if (!response.ok) {
-    throw new Error(`Request failed: ${response.status}`);
+const REQUEST_TIMEOUT_MS = 10000;
+
+export class HttpError extends Error {
+  constructor(message, status) {
+    super(message);
+    this.status = status;
   }
-  return response.json();
+}
+
+async function request(path, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    const response = await fetch(`${API_BASE_URL}${path}`, { ...options, signal: controller.signal });
+    if (!response.ok) {
+      throw new HttpError(`Request failed: ${response.status}`, response.status);
+    }
+    return await response.json();
+  } catch (error) {
+    if (error.name === "AbortError") {
+      throw new HttpError("Request timed out", 0);
+    }
+    throw error;
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 export function get(path) {
@@ -20,7 +40,5 @@ export function post(path, payload) {
   if (payload !== undefined) {
     options.body = JSON.stringify(payload);
   }
-  return request(path, {
-    ...options,
-  });
+  return request(path, options);
 }

@@ -1,77 +1,52 @@
 import { renderContactSection } from "../components/contactForm";
-import { renderReadabilityToolbar } from "../components/readabilityToolbar";
 import {
-  renderAboutSection,
-  renderArticlesSection,
-  renderCommunityServiceSection,
-  renderCtaSection,
-  renderExperienceSection,
-  renderGithubSection,
-  renderHeroSection,
-  renderJourneySection,
-  renderNavbar,
-  renderProjectsSection,
-  renderScholarshipsSection,
-  renderSiteFooter,
-  renderTopAlert,
-} from "../components/sections";
+  renderAboutShell,
+  renderCredentialsShell,
+  renderExperienceShell,
+  renderStackShell,
+  renderSystemsShell,
+  renderWritingShell,
+} from "../components/dataSections";
+import { renderNavbar, renderSiteFooter, renderStatusBanner } from "../components/layout";
 import {
   renderArchitectureSection,
-  renderDataSystemsSection,
-  renderHighlightsSection,
-  renderPhilosophySection,
+  renderHeroSection,
+  renderImpactSection,
+  renderLeadershipSection,
+  renderPrinciplesSection,
   renderProductionEngineeringSection,
-  renderSkillsSection,
-  renderStatsStrip,
-  renderTracTracCaseStudiesSection,
-} from "../components/engineeringSections";
+  renderTracTracCaseStudy,
+} from "../components/narrativeSections";
 
-export function renderHomePage(container, state) {
-  const { data, errors } = state;
-  const profile = data.profile;
-  const journey = data.journey || [];
-  const experience = data.experience || [];
-  const scholarships = data.scholarships || [];
-  const projects = data.projects || [];
-  const skills = data.skills || [];
-  const articles = data.articles || [];
-  const githubRepos = data.githubRepos || [];
-
+/**
+ * Renders the whole page shell synchronously. Static sections are complete;
+ * API-backed sections contain `data-slot` placeholders filled by bootstrap.js.
+ */
+export function renderHomePage(container) {
   container.innerHTML = `
-    <main class="site-shell">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
       <div class="app-layout">
-        ${renderNavbar(profile)}
-        <div class="content-column">
-          ${renderTopAlert(errors)}
-          ${renderReadabilityToolbar()}
-          <section id="home">
-            ${renderHeroSection(profile, skills)}
-          </section>
-          ${renderStatsStrip()}
-          ${renderHighlightsSection()}
-          ${renderAboutSection(profile)}
-          ${renderProjectsSection(projects)}
-          ${renderTracTracCaseStudiesSection()}
+        ${renderNavbar()}
+        <main id="main" class="content-column" tabindex="-1">
+          ${renderStatusBanner()}
+          ${renderHeroSection()}
+          ${renderImpactSection()}
+          ${renderSystemsShell()}
+          ${renderTracTracCaseStudy()}
           ${renderArchitectureSection()}
           ${renderProductionEngineeringSection()}
-          <section id="journey-experience">
-            ${renderExperienceSection(experience)}
-          </section>
-          ${renderDataSystemsSection()}
-          ${renderArticlesSection(articles)}
-          ${renderGithubSection(githubRepos)}
-          ${renderPhilosophySection()}
-          ${renderSkillsSection(skills)}
-          ${renderJourneySection(journey)}
-          ${renderCommunityServiceSection()}
-          ${renderScholarshipsSection(scholarships)}
-          ${renderCtaSection(profile)}
-          <section id="contact">
-            ${renderContactSection()}
-          </section>
-          ${renderSiteFooter(profile)}
-        </div>
+          ${renderLeadershipSection()}
+          ${renderExperienceShell()}
+          ${renderStackShell()}
+          ${renderWritingShell()}
+          ${renderPrinciplesSection()}
+          ${renderAboutShell()}
+          ${renderCredentialsShell()}
+          ${renderContactSection()}
+          ${renderSiteFooter()}
+        </main>
       </div>
-    </main>
+    </div>
   `;
 }

@@ -1,44 +1,14 @@
 import { get, post } from "./httpClient";
 
-export async function fetchPortfolioData() {
-  const keys = [
-    "profile",
-    "journey",
-    "experience",
-    "scholarships",
-    "projects",
-    "skills",
-    "articles",
-    "githubRepos",
-  ];
-
-  const requests = [
-    get("/profile"),
-    get("/profile/journey"),
-    get("/experience"),
-    get("/scholarships"),
-    get("/projects?featured=true"),
-    get("/skills"),
-    get("/articles"),
-    get("/github/repositories?limit=6"),
-  ];
-
-  const settled = await Promise.allSettled(requests);
-  const data = {};
-  const errors = [];
-
-  settled.forEach((result, index) => {
-    const key = keys[index];
-    if (result.status === "fulfilled") {
-      data[key] = result.value;
-      return;
-    }
-    data[key] = ["profile"].includes(key) ? null : [];
-    errors.push(key);
-  });
-
-  return { data, errors };
-}
+// One function per endpoint so each page section can load and fail independently.
+export const fetchProfile = () => get("/profile");
+export const fetchJourney = () => get("/profile/journey");
+export const fetchExperience = () => get("/experience");
+export const fetchProjects = () => get("/projects");
+export const fetchCredentials = () => get("/scholarships");
+export const fetchSkills = () => get("/skills");
+export const fetchArticles = () => get("/articles");
+export const fetchGithubRepos = () => get("/github/repositories?limit=6");
 
 export function sendContactMessage(payload) {
   return post("/contact", payload);

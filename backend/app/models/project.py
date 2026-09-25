@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, Integer, String, Text
+from sqlalchemy import JSON, Boolean, DateTime, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
@@ -18,6 +18,7 @@ class Project(Base):
     challenge: Mapped[str | None] = mapped_column(Text, nullable=True)
     engineered: Mapped[str | None] = mapped_column(Text, nullable=True)
     impact: Mapped[str | None] = mapped_column(Text, nullable=True)
+    facts: Mapped[list[str] | None] = mapped_column(JSON, nullable=True)
     repo_url: Mapped[str | None] = mapped_column(String(255), nullable=True)
     live_url: Mapped[str | None] = mapped_column(String(255), nullable=True)
     featured: Mapped[bool] = mapped_column(Boolean, default=False)
